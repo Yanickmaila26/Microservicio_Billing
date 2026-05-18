@@ -3,10 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using Microservicios.Atracciones.Billing.Business.DTOs.Payment;
 using Microservicios.Atracciones.Billing.Business.Interfaces;
 
+using Asp.Versioning;
+
 namespace Microservicios.Atracciones.Billing.API.Controllers.V1;
 
 [ApiController]
-[Route("api/v1/payment")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/yanick-maila/billing/[controller]")]
 public class PaymentController : ControllerBase
 {
     private readonly IPaymentService _paymentService;

@@ -4,10 +4,13 @@ using Microservicios.Atracciones.Billing.Business.DTOs.Billing;
 using Microservicios.Atracciones.Billing.Business.Interfaces;
 using Microservicios.Atracciones.Billing.DataAccess.Common;
 
+using Asp.Versioning;
+
 namespace Microservicios.Atracciones.Billing.API.Controllers.V1;
 
 [ApiController]
-[Route("api/v1/billing")]
+[ApiVersion("1.0")]
+[Route("api/v{version:apiVersion}/yanick-maila/billing/[controller]")]
 [Authorize(Roles = "Admin,Partner,Client")]
 public class BillingController : ControllerBase
 {
